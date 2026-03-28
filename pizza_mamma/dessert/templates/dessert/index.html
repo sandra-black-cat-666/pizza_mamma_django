@@ -1,0 +1,65 @@
+{% extends 'menu/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Dessert Menu</title>{% endblock %}
+    {% block css %}<link rel="stylesheet" href="{% static 'dessert/style.css' %}">{% endblock %}
+</head>
+    <body>
+        
+    {% block food %}
+        <h1>Nos desserts</h1>
+        <section class="list">
+            {% for i in dessert %}
+            <span class="name">{{ i.name }}</span>
+            <span class="price">{{ i.price | floatformat:2 }} €</span>
+            <span class="description"><i>{{ i.description }}</i></span>
+            {% endfor %}
+        </section>
+    {% endblock %}
+
+    {% block stories %}
+    <div class="did-you-know">
+        <h2>Le saviez-vous ?</h2>
+        <div class="story" id="tiramisu">
+            <p>Le mot «&nbsp;tiramisù&nbsp;» vient de l'expression italienne «&nbsp;tirami su&nbsp;», 
+            qui signifie «&nbsp;remonte-moi le moral&nbsp;» (littéralement «&nbsp;tire-moi vers le haut&nbsp;»).</p>
+            <p>Cette recette aurait été inventée à l'occasion de la visite du grand-duc de Toscane Cosme III de Médicis à Sienne.
+            Ce dessert lui a plu, tant et si bien qu'il l'aurait ramené à la cour de Florence avant de le faire connaître à travers toute l'Italie.</p>
+            <p>On raconte également que les Vénitiennes en offrait à leurs amants à la Renaissance, car à cette époque, on prêtait à ce dessert des vertus aphrodisiaques.</p>
+        </div>
+        <div class="story" id="panna-cotta">
+            <p>La panna cotta est une spécialité piémontaise, elle serait apparue pour la première fois à Traghe, près de Turin.</p>
+            <p>Un beau jour, au début du XIXe siècle, une cuisinière d'origine hongroise se serait retrouvée avec un surplus de lait.
+            Elle a alors eu l'idée d'élaborer des desserts à base de crème, de sucre et de gelatine, le tout cuit au four. Et c'est ainsi que la panna cotta, ou «&nbsp;crème cuite&nbsp;», a fait son apparition.</p>
+            <p>On suppose que le mot «&nbsp;panna cotta&nbsp;» n'a existé qu'à partir du XXe siècle, car le mot «&nbsp;crème&nbsp;» dans le dialecte piémontais se dit autrement : «&nbsp;fiör de làit&nbsp;», qui signifie «&nbsp;fleur de lait&nbsp;».</p>
+        </div>
+        <div class="story" id="panettone">
+            <p>Le panettone est sans conteste l'un des plus anciens desserts d'Italie.
+            Son histoire, en revanche, est quelque peu incertaine : il existe plusieurs légendes qui racontent sa naissance.</p>
+            <p>Néanmoins, le plus communément admise est la suivante : à l'époque médiévale, il était courant en période de fêtes de consommer du pain plus «&nbsp;riche&nbsp;» que d'ordinaire.</p>
+            <p>En effet, «&nbsp;panettone&nbsp;» veut dire «&nbsp;gros pain&nbsp;». C'était l'occasion d'agrémenter le pain de sucre, de lait, de saveurs sucrées... tout en conservant le levain, qui lui confère ce goût unique et savoureux.</p>
+        </div>
+        <div class="story">
+            <p>Les amaretti sont des petits biscuits de forme ronde originaires de la ville de Saronno en Lombardie, région de Milan.</p>
+            <p>À l'instar du tiramisù, la légende raconte que cette recette aurait été concoctée pour la première fois pour une occasion spéciale : un jeune couple aurait eu cette idée pour honorer la venue d'un cardinal en 1718.</p>
+            <p>L'amaretto se décline en plusieurs variantes, mais la plus connue est au coeur moëlleux et à l'extérieur croquant. Il est éléboré à base de farine, de sucre, de blanc d'oeuf... mais ce sont les amandes, (traditionnellement amères...), qui constituent l'essentiel de leur caractère.</p>
+        </div>
+        <!-- <div class="story">
+            <p>La crema di caffè, bien ancrée dans les traditions culinaires italiennes de nos jours, est néanmoins une invention récente.</p>
+            <p>Bla bla bla</p>
+            <p>Le crema di caffè nous fait rêver</p>
+        </div> -->
+        <button class="arrow" id="left" data-action="-1">◀</button>
+        <button class="arrow" id="right" data-action="1">▶</button>
+    </div>
+    {% endblock %}
+
+    {% block script %}<script src="{% static 'dessert/script.js' %}"></script>{% endblock %}
+
+</body>
+</html>

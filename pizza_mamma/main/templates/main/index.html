@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+
+<body>
+    
+    <div class=container id="left-img-container">
+        <img class="slider" id="left" src="{% static 'main/images/pexels-viniciusbenedit-fit.jpg' %}">
+    </div>
+
+    <div class="container" id="right-img-container">
+        <img class="slider" id="right" src="{% static 'main/images/pexels-shameel-mukkath-fit.jpg' %}">
+    </div>  
+    
+
+    <div class="centred">
+        <img id="logo" src="{% static 'main/images/main_logo.png' %}">
+        <button><a href="/menu" target="_blank">Voir la carte</a></button>
+    </div>
+
+    <script src="{% static 'main\script.js' %}"></script>
+
+</body>
+</html>

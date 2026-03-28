@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{% endblock %}
+    {% block css %}<spannk rel="stylesheet" href="{% static 'menu/base.css' %}">{% endblock %}
+</head>
+
+<body>
+
+    <div class="final-countdiv">
+        <p id="countdown-message"></p>
+        <p id="close-countdown">❌</p>
+    </div>
+    
+    <nav data-position="fixed">
+        <span class="nav-menu">
+            <span class="drop-down"><a href="http://127.0.0.1:8000/main" target="_blank">Accueil</a></span>
+            
+            <span class="drop-down"><a href="#" id="food">Cartes</a>
+                <span class="dropper">
+                    <div class="sub"><a href="http://127.0.0.1:8000/menu" target="_blank">Pizzas</a></div>
+                    <div class="sub"><a href="http://127.0.0.1:8000/dessert" target="_blank">Desserts</a></div>
+                </span>
+            </span>
+            
+            <span class="drop-down" id="contact"><a href="http://127.0.0.1:8000/contact" target="_blank">Contact</a></span>
+        </span>
+    </nav>
+    
+    <a href="/main"><img id="logo" src="{% static 'menu/images/small_logo.png' %}"></a>
+    
+    {% block food %}{% endblock %}
+    
+    {% block curtain %}{% endblock %}
+    
+    {% block location %}{% endblock %}
+
+    {% block stories %}{% endblock %}
+    
+    <footer id="phone" data-position="fixed">📞&nbsp;<a href="tel:+33666702100">06 66 70 21 00</a></footer>
+    
+    {% block script %}{% endblock %}
+    {% block api-script %}{% endblock %}
+</body>
+</html>

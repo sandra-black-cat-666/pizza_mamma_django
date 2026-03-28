@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/main_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+
+.container {
+    position: absolute;
+    width: 30vw;
+    background-color: black;
+    box-shadow: 2px 2px 6px 6px black;
+    color: white;
+    top: 50%;
+}
+
+
+.slider {
+    width: 100%;
+}
+
+
+#left-img-container {
+    left: 0%;
+    transform: translate(-100%, -50%);
+}
+
+#left-img-container.active {
+    transform: translate(10%, -50%);
+    transition: transform 1s ease-out;
+}
+
+
+#right-img-container {
+    right: 0%;
+    transform: translate(100%, -50%);
+}
+
+#right-img-container.active {
+    transform: translate(-10%, -50%);
+    transition: transform 1s ease-out;
+}
+
+
+.centred {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 26vw;
+}
+
+
+img#logo {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+
+button {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    background-color: rgb(74, 86, 255);
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 14px;
+}
+
+button a {
+    color: white;
+}
+
+button:hover {
+    box-shadow: 0 0 6px 2px rgb(74, 86, 255);
+    }
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+/* @media screen and (max-width: 1480px) {
+
+    button {
+        font-size: 1.4rem;
+    }
+
+} */
+
+
+
+@media screen and (max-width: 1080px) {
+
+    .centred {
+        width: 21rem;
+    }
+
+    .container {
+        all: unset;
+    }
+    
+    #left-img-container {
+        all: unset;
+        
+        position: fixed;
+        left: 50%;
+        right: 0;
+        top: 15%;
+        transform: translate(-50%, -15%);
+        /* display: flex;
+        justify-content: center; */
+        width: 60%;
+    }
+    
+    #right-img-container {
+        all: unset;
+
+        position: fixed;
+        left: 50%;
+        right: 0;
+        top: 95%;
+        transform: translate(-50%, -95%);
+        /* display: flex;
+        justify-content: center; */
+        width: 60%;
+    }
+
+}
+
+
+
+/* @media screen and (max-width: 860px) {
+    
+    .container {
+        width: 40%;
+    }
+    
+} */
+
+
+@media screen and (max-width: 414px) {
+
+    /* .container {
+        width: 90%
+    } */
+
+    #left-img-container {
+        width: 80%;
+    }
+    
+    #right-img-container {
+        width: 80%;
+    }
+
+}

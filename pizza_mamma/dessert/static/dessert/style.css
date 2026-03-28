@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --veil: rgb(0, 0, 0, 0.6);
+    --veil2: rgb(0, 0, 0, 0.8);
+    --veil3: rgb(250, 250, 250, 0.5);
+    --highlight: rgb(209, 209, 209, 0.4);
+    --light-green: rgb(0, 221, 55);
+
+    --footer-height: 6.6rem;
+}
+
+
+body {
+    background-image: url('images/pexels-eduardo-krajan-424982200-15359109.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    height: auto;
+    background-attachment: fixed;
+}
+
+
+.final-countdiv {
+    display: none;
+}
+
+
+nav {
+    position: fixed;
+    right: 2%;
+    top: 1%;
+}
+
+
+.drop-down {
+    display: inline-block; /* YES! Inline-block to line them up horizontally. */
+    margin: 0 0.6rem;
+}
+
+
+.drop-down a, .sub a {
+    display: inline-block; /* YES! Block or inline-block. The one thing that finally aligned the sub options with this drop-down menu header. Plus, they loose their margin and size if you remove that... */
+    text-align: center;
+    padding: 0.6rem 0;
+    width: 8rem;
+    
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    border: 1px solid white;
+    background-color: var(--veil);
+}
+
+    
+.sub {
+    display: table; /* YES! TABLE. To make the sub-options drop - they first displayed over the 'dropper'. */
+    margin-top: 0;
+    text-align: center;
+    visibility: hidden;
+}
+
+
+.sub a:hover, .drop-down a:hover {
+    background-color: var(--highlight);
+}
+
+.sub.active {
+    visibility: visible;
+}
+
+
+img {
+    display: inline;
+    margin: 4rem;
+    width: 31rem;
+}
+
+
+h1 {
+    max-width: 28rem;
+    background-color: rgb(209, 0, 98);
+    color: white;
+    font-family: verdana;
+    font-size: 3.1rem;
+    margin: 1.6rem 0;
+    padding: 0.6rem 1.6rem;
+}
+
+
+.list {
+    color: white;
+    margin-top: 0;
+    margin-left: 4.1rem;
+    margin-bottom: 4.2rem;
+}
+
+
+.name {
+    display: inline-block;
+    width: 28rem;
+    font-size: 2rem;
+    margin-top: 1.6rem;
+}
+
+
+.price {
+    display: inline-block;
+    width: 6.2rem;
+    text-align: right;
+    padding-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: arial;
+    background-color: var(--veil);
+    color: var(--light-green);
+}
+
+
+.description {
+    display: block;
+    width: 28rem;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+
+div.did-you-know {
+    position: relative;
+    position: fixed;
+    float: right;
+
+    right: 7.25%;
+    top: 54%;
+    transform: translate(7.25%, -54%);
+
+    height: 26rem;
+    width: 35rem;
+    background-color: var(--veil2);
+    color: whitesmoke;
+    border: 6px aquamarine dotted;
+    border-radius: 5%;
+}
+
+.did-you-know h2 {
+    position: absolute;
+    left: 50%;
+    top: 6%;
+    transform: translate(-50%, -6%);
+    width: 80%;
+    text-align: center;
+    font-family: cursive;
+    font-size: 1.9rem;
+}
+
+    
+.story {
+    position: absolute;
+    width: 26rem;
+    left: 50%;
+    top: 69%;
+    transform: translate(-50%, -69%);
+    /* padding: 0 0.5rem; */
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+
+.story.on {
+    opacity: 1;
+}
+
+/* .story.off {
+    opacity: 0;
+} */
+
+
+.story p {
+    padding: 0.4rem;
+    text-align: justify;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    top: 50%;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.666);
+    color: turquoise;
+}
+
+.arrow:hover {
+    background-color: var(--highlight);
+}
+
+.arrow#left {
+    right: 100%;
+    transform: translate(100%, -50%);
+}
+.arrow#right {
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+
+footer#phone {
+    position: fixed;
+    bottom: 6%;
+    right: 2%;
+    transform: translate(2%, 6%);
+    font-size: 2.75rem;
+    height: var(--footer-height);
+    padding: 1rem 0.4rem 0.6rem;
+}
+
+#phone a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/**************************** < 13" screens *******************************/
+
+@media only screen and (max-width: 1470px),
+    screen and (max-height: 669px) {
+
+    * {
+        font-size: 92%;
+    }
+
+}
+
+
+
+/********************************** Tablet/smartphone mode *************************************/
+
+
+@media only screen and (max-width: 1180px),
+    screen and (max-height: 641px) {
+    
+    * {
+        font-size: 68%;
+    }
+
+    :root {
+        --countdown-height: 70px;
+    }
+
+    body {
+        padding-top: var(--countdown-height);
+        margin-bottom: calc(var(--footer-height) * 2);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        right: 0;
+        left: 0;
+    }
+
+    .drop-down a, .sub a {
+        font-size: 1.6rem;
+        width: 9rem;
+    }
+
+    img#logo {
+        display: block;
+        margin: 3rem;
+        width: 30rem;
+    }
+
+    h1 {
+        font-size: 3.3rem;
+    }
+
+    .list {
+        /* display: block; */
+        margin-left: 2.5rem;
+        margin-bottom: var(--footer-height);
+    }
+
+    .name {
+        font-size: 2.75rem;
+    }
+
+    .price {
+        width: 6.2rem;
+        font-size: 1.6rem;
+    }
+
+    .description {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 2rem;
+        padding: 0
+    }
+
+    div.did-you-know {
+        position: static;
+        float: none;
+        top: 0;
+        right: 0;
+        left: 0;
+        transform: none;
+        position: relative;
+        margin: var(--footer-height) auto;
+        height: 34rem;
+    }
+    
+    .did-you-know h2 {
+        font-size: 2.3rem;
+    }
+    
+    .story {
+        width: 80%;
+        top: 74%;
+        transform: translate(-50%, -74%);
+    }
+
+    .story p {
+        padding: 0.4rem;
+        font-size: 1.3rem;
+    }    
+
+    footer#phone {
+        display: flex;
+        justify-content: center;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transform: none;
+        height: var(--footer-height);
+        background-color: var(--veil2);
+        font-size: 2.5rem;
+    }
+    
+    #phone a {
+        font-size: 2.75rem;
+        color: blue;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    
+}
+
+
+
+/********************************* Smartphone mode **********************************/
+
+@media only screen and (max-width: 860px) {
+
+    :root {
+        --footer-height: 6.9rem;
+    }
+
+    body {
+        padding-top: calc(var(--countdown-height) * 1.2);
+    }
+
+    img#logo {
+        margin: 4rem 2.5rem;
+    }
+
+    h1 {
+        margin: 0.4rem 0;
+    }
+
+    div.did-you-know {
+        height: 36.5rem;
+        width: 32rem;
+        translate: none;
+        border: 4px aquamarine dotted;
+        border-radius: 12%;
+    }
+    
+    .did-you-know h2 {
+        font-size: 2.15rem;
+    }
+    
+    .story {
+        width: 78%;
+        top: 74%;
+        transform: translate(-50%, -74%);
+    }
+
+    .story p {
+        padding: 0.4rem;
+        font-size: 1.24rem;
+    }
+
+    .arrow {
+        font-size: 1.7rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 414px) {
+
+    img#logo {
+        width: 80%;
+    }
+    
+    .name, .description {
+        width: 75%;
+    }
+
+}

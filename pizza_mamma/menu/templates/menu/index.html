@@ -1,0 +1,57 @@
+{% extends 'menu/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Pizza Menu</title>{% endblock %}
+    {% block css %}<link rel="stylesheet" href="{% static 'menu/style.css' %}">{% endblock %}
+</head>
+
+<body>
+    
+    {% block food %}
+    <section class="menu">
+        <h1>Nos pizzas</h1>
+        <div class="list">
+            {% for i in pizza_list %}
+            <span class="name">{{ i.name }}</span>
+            <span class="price">{{ i.price | floatformat:2 }} €</span>
+            <span class="ingredients"><i>{{ i.ingredients }}</i></span>
+            {% if i.veggie %}
+            <span class="veggie">Veggie</span>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endblock %}
+
+
+    {% block curtain %}
+    <section id="curtain" class="back-in">
+        
+        <p id="close-curtain">X</p>
+        
+        <h2>Du mal à vous décider ?</h2>
+        <p id="instruction">Appuyez sur le bouton pour choisir une pizza au hasard.</p>
+        
+        <button class="pizza-roulette">Pizza-roulette</button>
+        <div id="roulette"><p>🍕</p></div>
+        <p class="random-pizza">Votre pizza...</p>
+
+        <button id="pull-out" class="show">🍕</button>
+
+    </section>
+    {% endblock %}
+
+    {% block script %}
+    <script>
+        let list = '{{ pizza_names_json|escapejs }}';
+    </script>
+    <script src="{% static 'menu/script.js' %}"></script>
+    
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --veil: rgb(0, 0, 0, 0.6);
+    --highlight: rgb(209, 209, 209, 0.4);
+    --light-green: rgb(0, 221, 55);
+
+    --countdown-height: 3.8rem;
+    --footer-height: 6.6rem;
+}
+
+
+body {
+    margin-top: var(--countdown-height);
+    background-image: url('images/menu_background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+    height: auto;
+    background-attachment: fixed;
+}
+
+
+.final-countdiv {
+    display: none;
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--countdown-height);
+    background-color: var(--veil);
+}
+
+
+p#countdown-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 1.55rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+
+p#close-countdown {
+    cursor: pointer;
+    position: absolute;
+    left: 98%;
+    top: 50%;
+    transform: translate(-98%, -50%);
+    font-size: 1rem;
+    border: none;
+}
+
+
+nav {
+    position: fixed;
+    top: 1%;
+    right: 2%;
+}
+
+
+.drop-down {
+    display: inline-block; /* YES! Inline-block to line them up horizontally. */
+    margin: 0 0.6rem;
+}
+
+
+.drop-down a, .sub a {
+    display: inline-block; /* YES! Block or inline-block. The one thing that finally aligned the sub options with this drop-down menu header. Plus, they loose their margin and size if you remove that... */
+    text-align: center;
+    padding: 0.6rem 0;
+    width: 8rem;
+    
+    font-size: 1.4rem;;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    border: 1px solid white;
+    background-color: var(--veil);
+}
+
+
+.sub {
+    display: table; /* YES! TABLE. To make the sub-options drop - they first displayed over the 'dropper'. */
+    margin-top: 0;
+    text-align: center;
+    visibility: hidden;
+}
+
+
+.sub a:hover, .drop-down a:hover {
+    background-color: var(--highlight);
+}
+
+.sub.active {
+    visibility: visible;
+}
+
+
+img#logo {
+    display: inline;
+    margin: 4rem;
+    width: 31rem;
+}
+
+
+h1 {
+    max-width: 28rem;
+    background-color: red;
+    color: white;
+    font-family: verdana;
+    font-size: 2.6vw;
+    margin: 1.6rem 0;
+    padding: 0.6rem 1.6rem;
+}
+
+
+
+.list {
+    color: white;
+    margin-top: 0;
+    margin-left: 4.1rem;
+    margin-bottom: 4.2rem;
+}
+
+
+
+.name {
+    display: inline-block;
+    width: 28rem;
+    font-size: 2rem;
+    margin-top: 1.6rem;
+}
+
+
+.price {
+    display: inline-block;
+    width: 6.2rem;
+    text-align: right;
+    padding-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: arial;
+    background-color: var(--veil);
+    color: var(--light-green);
+}
+
+
+.ingredients {
+    display: block;
+    width: 28rem;
+    font-size: 1.25rem;
+}
+
+
+.veggie {
+    display: block;
+    width: 4.5rem;
+    padding: 0.4rem;
+    margin-top: 0.6rem;
+    text-align: center;
+    font-family: arial;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color:green;
+    background-color: yellow;
+    border-radius: 0.5rem;
+}
+
+
+#curtain {
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translate(100%, -50%);
+    width: 33rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid whitesmoke;
+    border-right: none;
+    background-color: var(--veil);
+    color: white;
+}
+
+
+#curtain.out {
+    transform: translate(0%, -50%);
+    transition: transform 1s ease-out;
+}
+
+
+#curtain.back-in {
+    transform: translate(100%, -50%);
+    transition: transform 1s ease-out;
+}
+
+#curtain.out #pull-out {
+    visibility: hidden;
+}
+
+#curtain.back-in #pull-out {
+    visibility: visible;
+    transition: visibility;
+    transition-delay: 1s;
+}
+
+/* #pull-out.hide {
+    visibility: hidden;
+}
+
+#pull-out.show {
+    visibility: visible;
+} */
+
+#close-curtain {
+    cursor: pointer;
+    float: right;
+    display: inline;
+    border: 1px solid white;
+    padding: 0.3rem 0.66rem;
+    margin: 1rem 1rem 0 0;
+    font-size: 1.2rem;
+}
+
+
+h2 {
+    padding: 0.6rem;
+    font-size: 1.9rem;
+}
+
+
+#instruction {
+    padding: 0.2rem 0.6rem;
+    font-size: 1.25rem;
+}
+
+
+button.pizza-roulette {
+    margin: 2.15rem auto;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    background-color: var(--light-green);
+    color: white;
+    border-radius: 2em;
+    padding: 0.8rem 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 0 6px 5px greenyellow;
+}
+
+button.pizza-roulette:hover {
+    box-shadow: 0 0 6px 8px greenyellow;
+}
+
+
+#roulette {
+    position: relative;
+    display: block;
+    margin: 2.5rem auto 2.25rem;
+    height: 7.1rem;
+    width: 7.1rem;
+    background-color: none;
+    box-shadow: 0 0 6px 6px white;
+    border-radius: 14%;
+    /* transform: rotate(-135deg); */
+}
+
+#roulette.active {
+    transform: rotate(1080deg);
+    transition: transform 2s ease-in-out;
+}
+
+#roulette.initial-position {
+    transform: rotate(-1080deg);
+    transition: transform 0s ease-in-out;
+}
+
+#roulette p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+}
+
+p.random-pizza {
+    width: 12em;
+    margin: 1.5rem auto;
+    /* padding: 0.6rem; */
+    color: crimson;
+    font-size: 1.9rem;
+    text-align: center;
+}
+
+p.random-pizza.hidden {
+    visibility: hidden;
+}
+
+
+button#pull-out {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    transform: translate(-105%, -50%);
+
+    font-size: 1.66rem;
+    padding: 0.66rem 0.66rem;
+    border-radius: 25%;
+}
+
+
+footer#phone {
+    position: fixed;
+    bottom: 6%;
+    right: 2%;
+    transform: translate(2%, 6%);
+    font-size: 2.75rem;
+    height: var(--footer-height);
+    padding: 1rem 0.4rem 0.6rem 0.4rem;
+}
+
+#phone a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/**************************** 13" screens *******************************/
+
+@media only screen and (max-width: 1473px),
+    screen and (max-height: 780px) {
+  
+    * {
+        font-size: 92%;
+    }
+
+}
+
+
+/********************************** Smartphone/tablet mode *************************************/
+
+
+@media only screen and (max-width: 1120px),
+    screen and (max-height: 680px) {
+    
+    * {
+        font-size: 68%;
+    }
+
+    :root {
+        --veil2: rgb(0, 0, 0, 0.85);
+
+        --countdown-height: 70px;
+    }
+
+    body {
+        padding-top: var(--countdown-height);
+        margin-bottom: calc(var(--footer-height) * 2);
+    }
+
+    p#countdown-message {
+        font-size: 2rem;
+        width: 85%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        right: 0;
+        left: 0;
+    }
+
+    .drop-down a, .sub a {
+        font-size: 1.6rem;
+        width: 9rem;
+    }
+
+    img#logo {
+        display: block;
+        margin: 3rem;
+        width: 30rem;
+    }
+
+    h1 {
+        font-size: 3.3rem;
+    }
+
+    .list {
+        display: block;
+        margin-left: 2.5rem;
+        /* margin-bottom: calc(var(--footer-height) * 2); */
+    }
+
+    .name {
+        font-size: 2.75rem;
+    }
+
+    .price {
+        width: 6.2rem;
+        font-size: 1.6rem;
+    }
+
+    .ingredients {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 2rem;
+        padding: 0;
+    }
+
+    .veggie {
+        width: 4.8rem;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    footer#phone {
+        display: flex;
+        justify-content: center;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transform: none;
+        height: var(--footer-height);
+        background-color: var(--veil2);
+        font-size: 2.5rem;
+    }
+    
+    #phone a {
+        font-size: 2.75rem;
+        color: blue;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+}
+
+
+
+/********************************************************************************/
+
+@media only screen and (max-width: 800px) {
+
+    :root {
+        --veil3: rgb(255, 253, 253, 0.6);
+
+        --footer-height: 6.9rem;
+    }
+
+    body {
+        padding-top: calc(var(--countdown-height) * 1.2);
+    }
+
+    .drop-down a, .sub a {
+        font-size: 1.6rem;
+    }
+
+    img#logo {
+        margin: 4rem 2.5rem;
+    }
+
+    h1 {
+        margin: 0.4rem 0;
+    }
+
+    #curtain {
+        width: 29.5rem;
+        background-color: var(--veil2);
+    }
+
+    button#pull-out {
+        left: -5%;
+        top: 100%;
+        transform: translate(-105%, -0%);
+        background-color: var(--veil3);
+    }
+
+}
+
+
+@media only screen and (max-width: 414px) {
+
+    img#logo {
+        width: 80%;
+    }
+
+    .name, .ingredients {
+        width: 75%;
+    }
+
+}

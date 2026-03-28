@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --veil: rgb(0, 0, 0, 0.6);
+    --veil1: rgb(0, 0, 0, 0.3);
+    --veil2: rgb(0, 0, 0, 0.7);
+    --veil3: rgb(250, 250, 250, 0.5);
+    --highlight: rgb(209, 209, 209, 0.4);
+    --light-green: rgb(0, 221, 55);
+
+    --footer-height: 6.6rem;
+}
+
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/pexels-clickerhappy-3498.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+    height: auto;
+    background-attachment: fixed;
+}
+
+
+.final-countdiv {
+    display: none;
+}
+
+
+nav {
+    position: fixed;
+    top: 1%;
+    right: 2%;
+}
+
+
+.drop-down {
+    display: inline-block; /* YES! Inline-block to line them up horizontally. */
+    margin: 0 0.6rem;
+}
+
+/* .dropper {
+    position: relative;    
+} */
+
+.drop-down a, .sub a {
+    display: inline-block; /* YES! Block or inline-block. The one thing that finally aligned the sub options with this drop-down menu header. Plus, they loose their margin and size if you remove that... */
+    border: 1px solid white;
+    text-align: center;
+    padding: 0.6rem 0;
+    width: 8rem;
+    
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: var(--veil);
+}
+
+
+.sub {
+    display: table; /* YES! TABLE. To make the sub-options drop - they first displayed over the 'dropper'. */
+    margin-top: 0;
+    text-align: center;
+    visibility: hidden;
+}
+
+
+.sub a:hover, .drop-down a:hover {
+    background-color: var(--highlight);
+}
+
+.sub.active {
+    visibility: visible;
+}
+
+
+img {
+    display: inline;
+    margin: 4rem;
+    width: 31rem;
+}
+
+
+h1 {
+    max-width: 28rem;
+    background-color: blue;
+    color: white;
+    font-family: verdana;
+    font-size: 3.1rem;
+    margin: 1.6rem 0;
+    padding: 0.6rem 1.6rem;
+}
+
+
+
+.opening-hours {
+    width: 27rem;
+    color: white;
+    margin-top: 0;
+    margin-left: 4.1rem;
+    margin-bottom: 4.2rem;
+}
+
+
+
+.day {
+    display: inline-block;
+    width: 62%;
+    font-size: 2rem;
+    margin-top: 1.6rem;
+    background-color: var(--veil1);
+}
+
+
+.time {
+    display: inline-block;
+    width: 34%;
+    text-align: right;
+    padding-right: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: arial;
+    background-color: var(--veil);
+    color: var(--light-green);
+}
+
+
+div.info {
+    background-color: var(--veil2);
+    color: white;
+    border-radius: 6px;
+}
+
+div#details {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 27.5rem;
+    padding: 1.6rem 0.85rem;
+
+    font-size: 1.6rem;
+    border-radius: 6px;
+}
+
+span.emoji {
+    display: inline-block;
+    width: 2.5rem;
+    padding: 0.85rem 1.6rem;
+    text-align: left;
+}
+
+span.address {
+    display: inline-block;
+    padding: 0.6rem 1.85rem;
+    text-align: left;
+}
+
+
+div#contact-form {
+    position: fixed;
+    right: 6%;
+    top: 80%;
+    transform: translate(6%, -80%);
+    float: right;
+
+    width: 27.5rem;
+    padding: 1.6rem 0.85rem;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+
+form {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+h2 {
+    text-align: center;
+    margin: 0.35rem auto 1.6rem;
+    width: 21.8rem;
+    font-size: 2.06rem;
+    color: aqua;
+}
+
+
+.entry {
+    font-size: 1.15rem;
+    margin: 0.4rem 1.6rem;
+}
+
+
+.form-tag {
+    display: block;
+    margin: 0.3rem 0.85rem;
+}
+
+
+form input, textarea {
+    min-height: 2.25rem;
+    padding-left: 0.85rem;
+    border-radius: 25px;
+    background-color: var(--veil3);
+    color: black;
+    width: 100%;
+    font-size: 0.92rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+form input:focus, textarea:focus {
+    outline: none;
+}
+
+textarea {
+    padding: 0.85rem;
+    min-height: 9rem;
+    max-height: 9rem;
+    max-width: 100%;
+}
+
+form small {
+    display: block;
+    padding-left: 0.85rem;
+    margin-top: 0.12rem;
+    visibility: hidden;
+}
+
+
+.entry.error small {
+    visibility: visible;
+    color: red;
+}
+
+
+.entry.error input, .entry.error textarea {
+    border: 2px solid red;
+}
+
+.entry.success small {
+    color: var(--light-green);
+    visibility: hidden;
+    transition: visibility 1s ease-out;
+}
+
+
+.entry.success input, .entry.success textarea {
+    border: 2px solid var(--light-green);
+}
+
+
+form button {
+    cursor: pointer;
+    display: block;
+    padding: 0.66rem 0;
+    margin: 1rem auto;
+    width: 87%;
+
+    background-color: blue;
+    color: white;
+    font-size: 1.12rem;
+    border: none;
+    border-radius: 0.85rem;
+}
+
+form button:hover {
+    box-shadow: 0 0 6px 3px aqua;
+}
+
+
+footer#phone {
+    display: none;
+}
+
+
+/**************************** < 13" screens *******************************/
+
+@media only screen and (max-width: 1470px),
+    screen and (max-height: 810px) {
+
+    * {
+        font-size: 92%;
+    }
+
+    div#contact-form {
+        font-size: 1.25rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 1347px) {
+
+
+    :root {
+        --countdown-height: 70px;
+    }    
+
+    div#contact-form, div#details {
+        position: static;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: none;
+        float: none;
+        margin: var(--countdown-height) auto;
+    }
+
+}
+
+
+
+/********************************** Tablet/smartphone mode *************************************/
+
+
+@media only screen and (max-width: 1180px),
+    screen and (max-height: 777px) {
+    
+    * {
+        font-size: 68%;
+    }
+
+    :root {
+        --countdown-height: 70px;
+    }
+
+    body {
+        padding-top: var(--countdown-height);
+        margin-bottom: calc(var(--footer-height) * 2);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        right: 0;
+        left: 0;
+    }
+
+    .drop-down a, .sub a {
+        font-size: 1.6rem;
+        width: 9rem;
+    }
+
+    img#logo {
+        display: block;
+        margin: 3rem;
+        width: 30rem;
+        margin: 4rem 2.5rem;
+    }
+
+    h1 {
+        font-size: 3.3rem;
+    }
+
+    .opening-hours {
+        display: block;
+        margin-left: 2.5rem;
+        margin-bottom: var(--footer-height);
+        width: 30rem;
+    }
+
+    .day {
+        font-size: 2.4rem;
+    }
+
+    .time {
+        font-size: 1.65rem;
+        width: 10.25rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    div#contact-form, div#details {
+        width: 29.5rem;
+    }
+
+    div#details {
+        font-size: 3.85rem;
+    }
+
+    .form-tag {
+        font-size: 1.5rem;
+    }
+
+    form input {
+        height: 2.85rem;
+    }
+
+    form input, textarea {
+        font-size: 1.25rem;
+    }
+
+    form small {
+        font-size: 1.1rem;
+    }
+
+    textarea {
+        min-height: 15rem;
+    }
+
+    form button {
+        font-size: 1.6rem;
+    }
+
+    footer#phone {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transform: none;
+        height: var(--footer-height);
+        background-color: black;
+        font-size: 2.5rem;
+        padding: 1rem 0.4rem 0.6rem;
+    }
+    
+    #phone a {
+        font-size: 2.75rem;
+        color: blue;
+        font-weight: bold;
+        text-decoration: underline;
+    }    
+
+}
+
+
+
+/********************************* Smartphone mode **********************************/
+
+@media only screen and (max-width: 414px) {
+
+    body {
+        padding-top: calc(var(--countdown-height) * 1.2);
+    }
+
+    img#logo {
+        width: 80%;
+    }
+
+    .opening-hours {
+        width: 90%;
+    }
+
+}

@@ -1,0 +1,73 @@
+{% extends 'menu/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Contact</title>{% endblock %}
+    {% block css %}<link rel="stylesheet" href="{% static 'contact/style.css' %}">{% endblock %}
+</head>
+<body>
+    {% block food %}
+
+    <h1>Nos horaires</h1>
+
+    <div class="opening-hours">
+        <span class="day">Mardi</span><span class="time">11:00 - 22:30</span>
+        <span class="day">Mercredi</span><span class="time">11:00 - 22:30</span>
+        <span class="day">Jeudi</span><span class="time">11:00 - 22:30</span>
+        <span class="day">Vendredi</span><span class="time">11:30 - 23:00</span>
+        <span class="day">Samedi</span><span class="time">11:30 - 23:00</span>
+        <span class="day">Dimanche</span><span class="time">11:00 - 22:30</span>
+    </div>
+
+    {% endblock %}
+
+    {% block location %}
+    
+    
+    <div class="info" id="details">
+        <h2>Nos coordonnées</h2>
+        <div><span class="emoji">📞</span><span class="address">06 66 70 21 00</span></div>
+        <div><span class="emoji">🏠</span><span class="address">2 place de la Bastille</span></div>
+        <div><span class="emoji"></span><span class="address">38000 GRENOBLE</span></div>
+        <div><span class="emoji">📧</span><span class="address">contact@pizzamamma.com</span></div>
+    </div>
+    
+    <div class="info" id="contact-form">
+        <h2>Formulaire de contact</h2>
+
+        <form>
+            <div class="entry" id="subject-div">
+                <label for="subject" class="form-tag">Sujet</label>
+                <input id="subject" placeholder="Réservation, horaires d'été, etc.">
+                <small>Error message</small>
+            </div>
+            <div class="entry" id="name-div">
+                <label for="name" class="form-tag">Nom</label>
+                <input id="name" placeholder="Votre nom">
+                <small>Error message</small>
+            </div>
+            <div class="entry" id="email-div">
+                <label for="email" class="form-tag">E-mail</label>
+                <input id="email" placeholder="Votre e-mail">
+                <small>Error message</small>
+            </div>
+            <div class="entry" id="message-div">
+                <label for="message" class="form-tag">Votre message</label>
+                <textarea id="message" placeholder="Écrivez ici votre message."></textarea>
+                <small>Error message</small>
+            </div>
+            <button id="send">Envoyer</button>
+        </form>
+    </div>
+
+    {% endblock %}
+    
+    {% block script %}<script src="{% static 'contact/script.js' %}"></script>{% endblock %}
+    
+
+</body>
+</html>
